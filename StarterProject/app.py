@@ -4,6 +4,8 @@ It contains the definition of routes and views for the application.
 """
 
 from flask import Flask
+from flask import request
+
 app = Flask(__name__)
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
@@ -11,9 +13,13 @@ wsgi_app = app.wsgi_app
 
 
 @app.route('/')
-def hello():
-    """Renders a sample page."""
-    return "Hello World!"
+@app.route('/hello')
+@app.route('/hello/<name>')
+def hello(name = None):
+    msg = request.args.get("message", "")
+    if name is None:
+        return f"Hello World! {msg}"
+    return f"Hello {name}! {msg}"
 
 if __name__ == '__main__':
     import os
