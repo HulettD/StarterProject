@@ -1,11 +1,21 @@
+from datetime import datetime
 from flask import Flask
-from HelloFlask import app
+from flask import render_template
 from flask import request
+from HelloFlask import app
+
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return "Hello Flask!"
+    now = datetime.now()
+    formatted_now = now.strftime("%A, %d %B, %Y at %X")
+
+    return render_template(
+        "index.html",
+        title = "Hello Flask",
+        message = "Hello, Flask!",
+        content = " on " + formatted_now)
 
 @app.route('/hello')
 @app.route('/hello/<name>')
