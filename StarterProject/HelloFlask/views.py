@@ -22,3 +22,7 @@ def home():
 def hello(name = None):
     msg = request.args.get("message", None)
     return f"Hello {'World' if name is None else name}!{'' if msg is None else ' ' + msg}"
+
+@app.route('/api/data')
+def get_data():
+  return app.send_static_file('data.json')
