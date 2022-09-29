@@ -17,6 +17,7 @@
     <Name>StarterProject</Name>
     <RootNamespace>StarterProject</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,7 @@
     <Content Include="HelloFlask\templates\about.html" />
     <Content Include="HelloFlask\templates\index.html" />
     <Content Include="HelloFlask\templates\layout.html" />
+    <Content Include="HelloFlask\templates\upload.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HelloFlask\" />
+    <Folder Include="HelloFlask\static\uploads\" />
+    <Folder Include="HelloFlask\uploads\" />
     <Folder Include="HelloFlask\static\" />
     <Folder Include="HelloFlask\templates\" />
   </ItemGroup>

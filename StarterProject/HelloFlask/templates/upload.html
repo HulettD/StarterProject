@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <label for="file-upload">Upload a file (.txt, .pdf, .png, .jpg, .jpeg, .gif)</label>
+    <br />
+    <input id="file-upload" name="file" type="file" />
+    <button type="submit">Upload</button>
+</form>
+{% endblock %}
